@@ -39,6 +39,7 @@ class Weather extends React.Component {
   }
 }
 
+
 ReactDOM.render(
   <Weather />,
   document.getElementById('app')

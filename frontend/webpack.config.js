@@ -9,6 +9,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   devServer: {
+    disableHostCheck: true,
     contentBase: 'src/public',
     historyApiFallback: true,
     port: 8000,
@@ -41,6 +42,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         ENDPOINT: JSON.stringify(process.env.ENDPOINT || 'http://0.0.0.0:9000/api'),
+        //ENDPOINT: JSON.stringify(process.env.ENDPOINT || 'http://192.168.99.100:9000/api'),
       },
     }),
   ],
