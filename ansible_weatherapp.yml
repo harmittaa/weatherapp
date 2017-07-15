@@ -1,7 +1,0 @@
-- name: Launch docker-compose
-  hosts: localhost
-  connection: local
-  tasks:
-    - docker_service:
-        project_src: .
-        state: present

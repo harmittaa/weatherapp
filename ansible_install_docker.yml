@@ -1,0 +1,21 @@
+- name: Install Docker
+  hosts: aws
+  remote_user: "ubuntu"
+  
+  #for installing Docker
+  # https://www.digitalocean.com/community/tutorials/how-to-install-and-   # use-docker-on-ubuntu-16-04
+  tasks:
+    - name: Test message
+      debug: msg="Ansible is working!"
+    - name: Add GPG key
+      raw: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    - name: Add to APT sources
+      raw: sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+    - name: Update package DB
+      raw: sudo apt-get update
+    - name: Install Docker
+      raw: sudo apt-get install -y docker-ce
+      
+   # - docker_service:
+    #    project_src: .
+    #    state: present
