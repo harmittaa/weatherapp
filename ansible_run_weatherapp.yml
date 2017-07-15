@@ -4,12 +4,12 @@
   
   
   tasks:
+  - name: Clone repo
+    git:
+      repo: "https://github.com/harmittaa/weatherapp.git"
+      dest: /home/ubuntu/weatherapp/
   - name: Launch Docker-compose
     become: true
     docker_service:
       project_src: weatherapp/
       state: present
-#    - name: Clone repo
-#      git:
-#        repo: "https://github.com/harmittaa/weatherapp.git"
-#        dest: /home/ubuntu/weatherapp/
