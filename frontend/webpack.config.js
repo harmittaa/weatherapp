@@ -41,7 +41,8 @@ module.exports = {
     ], '.'),
     new webpack.DefinePlugin({
       'process.env': {
-        ENDPOINT: JSON.stringify(process.env.ENDPOINT || 'http://0.0.0.0:9000/api'),
+        //ENDPOINT: JSON.stringify(process.env.ENDPOINT || 'http://0.0.0.0:9000/api'),
+        ENDPOINT: JSON.stringify(process.env.ENDPOINT || 'http://ec2-34-211-254-23.us-west-2.compute.amazonaws.com:9000/api'),
         //ENDPOINT: JSON.stringify(process.env.ENDPOINT || 'http://192.168.99.100:9000/api'),
       },
     }),
