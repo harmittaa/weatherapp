@@ -1,7 +1,11 @@
 - name: Install Docker
-  hosts: aws
+  hosts: awsnew
   remote_user: "ubuntu"
-  
+  become: true
+  gather_facts: False
+  pre_tasks:
+    - raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+
   #for installing Docker
   # https://www.digitalocean.com/community/tutorials/how-to-install-and-   # use-docker-on-ubuntu-16-04
   tasks:
@@ -17,7 +21,3 @@
       raw: sudo apt-get install -y docker-ce
     - name: Install Docker-compose
       raw: sudo apt-get install -y docker-compose
-      
-   # - docker_service:
-    #    project_src: .
-    #    state: present

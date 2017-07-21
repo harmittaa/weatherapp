@@ -1,7 +1,6 @@
 - name: Run weatherapp
-  hosts: aws
+  hosts: awsnew
   remote_user: "ubuntu"
-  
   
   tasks:
   - name: Clone repo
