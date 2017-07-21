@@ -1,15 +1,7 @@
-[aws]
-ec2-34-211-254-23.us-west-2.compute.amazonaws.com
-
 [local]
 localhost
-
-[aws:vars]
-#ansible_ssh_private_key_file = ~/.ssh/KeyPair.pem
-ansible_ssh_private_key_file = /mnt/c/Users/Asus/Documents/.ssh/KeyPair.pem
 
 [awsnew:vars]
 ansible_ssh_private_key_file = ~/.ssh/weatherapp_key.pem
 
 [awsnew]
-35.176.33.46
